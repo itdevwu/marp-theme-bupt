@@ -1,0 +1,208 @@
+@use 'sass:color';
+
+/*!
+ * Marp BUPT
+ *
+ * @theme bupt
+ * @author itdevwu
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
+
+@import-theme "gaia";
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/night-owl.css');
+
+
+:root {
+    --color-foreground: #345;
+    --color-highlight: #99c;
+    --color-highlight-hover: #aaf;
+    --color-highlight-heading: #99c;
+    --color-header: #bbb;
+    --color-header-shadow: transparent;
+
+    --color-background: #fff;
+    --color-foreground: #333;
+    --color-highlight: #025AD6;
+    --color-dimmed: #888;
+
+    --logo: url("./assets/BUPT_Logo_bg.svg");
+    --logo-name: url("./assets/BUPT_Logo_Name.svg");
+}
+
+section {
+    background: var(--logo) 50% 50%/30% no-repeat, var(--logo-name) 98% 3%/16% no-repeat;
+    background-color: rgb(246, 245, 245);
+    font-family: Comfortaa;
+}
+
+section::after {
+    content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+    font-weight: light;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14pt;
+}
+
+:root.milestone {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    background-image: none !important;
+    justify-content: center;
+}
+
+table {
+    text-align: center;
+    margin: 1em auto;
+}
+
+blockquote {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: auto;
+    text-align: center;
+    max-width: 60%;
+    font-size: smaller;
+    font-style: italic;
+}
+
+
+code {
+    display: inline-block;
+    font-family: 'Fira Code Retina', monospace;
+    font-size: 0.8em;
+    letter-spacing: 0;
+    margin: -0.1em 0.15em;
+    padding: 0.1em 0.2em;
+    vertical-align: baseline;
+
+    /* hljs */
+    color: #383a42;
+    background: #fafafa;
+}
+
+pre {
+    display: block;
+    margin: 1em 0 0;
+    overflow: visible;
+
+    /* hljs */
+    color: #383a42;
+    background: #fafafa;
+}
+
+pre::code {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 100%;
+    padding: 0.5em;
+    font-size: 0.7em;
+
+    /* hljs */
+    color: #383a42;
+    background: #fafafa;
+}
+
+pre::part(auto-scaling) {
+    max-height: calc(480px - 1em);
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+    color: #383a42;
+    background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #a0a1a7;
+    font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+    color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+    color: #e45649;
+}
+
+.hljs-literal {
+    color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+    color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+    color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+    color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+    color: #c18401;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
